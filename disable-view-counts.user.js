@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         No More View Counts
+// @name         Disable View Counts
 // @namespace    http://tampermonkey.net/
-// @version      0.1.3
+// @version      1.0.0
 // @description  Hide that anxiety-provoking view counts
 // @author       WinISaySo
 // @match        https://fetlife.com/*
@@ -11,29 +11,6 @@
 
 (function() {
     'use strict';
-
-    const shouldNotIntercept = evt => !evt.canIntercept || evt.hashChange || evt.downloadRequest || evt.formData;
-
-
-    // wait for a given element to exist before executinmg a callback
-    const whenElementExists = (selector) => new Promise(resolve => {
-        const element = document.querySelector(selector);
-        if (document.querySelector(selector)) return resolve(element);
-
-        const observer = new MutationObserver(mutations => {
-            const element = document.querySelector(selector);
-
-            if (element) {
-                observer.disconnect();
-                resolve(element);
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    });
 
     const removeViewCount = () => {
         const viewCount = document.querySelector("[data-views]");
@@ -56,3 +33,4 @@
         whenElementExists("[data-views]").then(removeViewCount);
     });
 })();
+
