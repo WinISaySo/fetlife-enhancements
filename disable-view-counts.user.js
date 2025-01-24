@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         Disable View Counts
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Hide that anxiety-provoking view counts
 // @author       WinISaySo
 // @match        https://fetlife.com/*
-// @icon         https://www.google.com/s2/favicons?sz=64&domain=tampermonkey.net
+// @icon         https://www.google.com/s2/favicons?sz=64&domain=fetlife.com
 // @grant        none
 // ==/UserScript==
 
