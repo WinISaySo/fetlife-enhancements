@@ -10,10 +10,10 @@ What it says on the tin. Small userscripts to make the QoL of FetLife better for
 - [Disable View Counts](https://github.com/WinISaySo/fetlife-enhancements/raw/refs/heads/main/disable-view-counts.user.js): Disables the view-count number on posts.
 - [Hate Button](https://github.com/WinISaySo/fetlife-enhancements/raw/refs/heads/main/hate-button.user.js): Transform the so-called "Downvote" button into a "Hate" button with similar styling and behavior to the "Love" button.
 - [Explore Last Tab](https://github.com/WinISaySo/fetlife-enhancements/raw/refs/heads/main/explore-last-tab.user.js): Instead of always going to "Kinky & Popular", "Explore" will remember the last explore tab you visited (For You, Friends & Following, etc)
+- [Red Flags](https://github.com/WinISaySo/fetlife-enhancements/raw/refs/heads/main/red-flags.user.js): Highlight red flags on user profiles to make vetting easier.
 
 ### In development
 These are ones I'm working on that are **not** ready for public consumption. They're listed here to make it easier for me to install on different browsers as I work on them.
-- [Red Flags](https://github.com/WinISaySo/fetlife-enhancements/raw/refs/heads/main/red-flags.user.js): Highlight red flags on user profiles to make vetting easier.
 
 ## Help 
 ### Prerequisites
@@ -30,4 +30,3 @@ To install a script, simply click a link below. On TamperMonkey, you should see 
 You can also click the files directly in GitHub's file browser if you'd like to
 examine the code before installing. Rather than coming back here, you can click
 the "Raw" button once you're finished auditing the code to install.
-
