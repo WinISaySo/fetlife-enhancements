@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Red Flags
 // @namespace    http://tampermonkey.net/
-// @version      1.0.0
+// @version      1.0.1
 // @description  Highlight problematic phrases on a profile
 // @author       WinISaySo
 // @match        https://fetlife.com/users/*
@@ -58,7 +58,7 @@
     elements.forEach(element => {
       if (element.textContent.includes(flag)) {
         element.innerHTML = element.innerHTML.replace(
-          RegExp(flag, "g"), 
+          RegExp(flag, "g"),
           `<mark class="red-flag">${flag}</mark>`
         );
       }
@@ -82,7 +82,7 @@
         "Which red flags would you like me to spot for you? Paste a comma-separated list to use for them",
         flags.join(",")
       );
-      const newFlags = response.split(",");
+      let newFlags = response.split(",").filter(flag => flag).map(flag => flag.trim());
       window.localStorage.setItem("w/fl/red_flags", JSON.stringify(newFlags));
       if (JSON.stringify(newFlags) !== JSON.stringify(flags)) {
         window.location.reload();
