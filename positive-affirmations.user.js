@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Positive Affirmations
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      1.0.0
 // @description  Adds a positive affirmation banner to the top of the page
 // @author       WinISaySo
 // @match        https://fetlife.com/*
@@ -66,7 +66,7 @@
   window.addEventListener("load", async () => {
     const moreButton = document.querySelector(".flex-auto>.dropdown")
     const banner = document.createElement("div");
-    banner.className = "font-normal text-gray-100 ml-1";
+    banner.className = "font-normal text-gray-100 ml-1 hidden xl:block";
     moreButton.insertAdjacentElement("afterend", banner);
 
     banner.textContent = await getAffirmation();
