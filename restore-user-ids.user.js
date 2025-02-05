@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Restore User Ids
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Replace user names in the url with user ids like they were before
 // @author       You
 // @match        https://fetlife.com/*
@@ -25,6 +25,6 @@
             }
         }
 
-        window.history.replaceState({ originalPath: window.location.path, reason: 'Restore User Ids enhancemeent is enabled' }, '', location.href.replace(new RegExp("WinISaySo", "g"), `user/${userId}`))
+        window.history.replaceState({ originalPath: window.location.path, reason: 'Restore User Ids enhancemeent is enabled' }, '', location.href.replace(new RegExp("WinISaySo", "g"), `users/${userId}`))
     });
 })();
