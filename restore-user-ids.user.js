@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Restore User Ids
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      1.0.0
 // @description  Replace user names in the url with user ids like they were before
 // @author       You
 // @match        https://fetlife.com/*
@@ -16,7 +16,9 @@
     window.addEventListener("load", () => {
         let userId = window.localStorage.getItem("w/fl/restore_user_id");
         const viewProfileLink = document.querySelector("a[title='View Profile']");
+        let userName = "";
         if (viewProfileLink) {
+            userName = viewProfileLink.innerText.split(" ")[0];
             const foundUserId = viewProfileLink.href.split("/").at(-1);
             // might have changed because of switching to an alternate account
             if (userId !== foundUserId) {
@@ -24,7 +26,8 @@
                 window.localStorage.setItem("w/fl/restore_user_id", userId);
             }
         }
-
-        window.history.replaceState({ originalPath: window.location.path, reason: 'Restore User Ids enhancemeent is enabled' }, '', location.href.replace(new RegExp("WinISaySo", "g"), `users/${userId}`))
+        if (userName && userId) {
+            window.history.replaceState({ originalPath: window.location.path, reason: 'Restore User Ids enhancemeent is enabled' }, '', location.href.replace(new RegExp(userName, "g"), `users/${userId}`))
+        }
     });
 })();
